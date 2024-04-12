@@ -1,0 +1,7 @@
+{% comment %} {{ form }} {% endcomment %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Зареєструватися</button>
+</form>

@@ -1,0 +1,65 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/articles_abonem.css' %}">
+    </head>
+    <body>
+        <div class="abon">
+            <h1>Абонементи на заняття</h1>
+            <div class="exercise">
+                <div class="grid-container">
+                    {% for item in exercise_abonements %} 
+                    <div class="grid-item">
+                        <div class="ab-head">
+                            <div class="name">
+                                <h3>{{item.name}}</h3>
+                            </div>
+                            <div class="price">
+                                <h3>{{item.price}}</h3>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p>{{item.description |safe}}</p>
+                        </div>
+                        <button>Придбати</button>
+                    </div>
+                    {% endfor %}  
+                </div>
+            </div>
+        </div>  
+
+        <div class="abon">
+            <h1>Місячні абонементи</h1>
+            <div class="exercise">
+                <div class="grid-container">
+                    {% for item in monthly_abonements %} 
+                    <div class="grid-item">
+                        <div class="ab-head">
+                            <div class="name">
+                                <h3>{{item.name}}</h3>
+                            </div>
+                            <div class="price">
+                                <h3>{{item.price}}</h3>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p>{{item.description |safe}}</p>
+                        </div>
+                        <button>Придбати</button>
+                    </div>
+                    {% endfor %} 
+                </div>
+            </div>
+        </div> 
+    </body>
+</html>
+{% endblock %}

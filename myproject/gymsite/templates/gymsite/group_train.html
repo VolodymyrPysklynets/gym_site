@@ -1,0 +1,69 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body>
+        <div class="info">
+            <h1>Запрошуємо на Групові Тренування!</h1>
+            <p>Приєднуйтесь до нашої команди для захоплюючих та ефективних<br> 
+                групових тренувань, спеціально розроблених для всіх рівнів<br>
+                фізичної підготовки.</p>
+            <p>Ви шукаєте спосіб зберегти мотивацію та насолодитися<br>
+                тренуваннями в приємній компанії? <br>
+                Тоді ви потрапили за адресою!</p>
+            <h2>Що ми пропонуємо:</h2>
+        </div>
+
+        <div class="features">
+            <div class="container">
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/sport.png" %}" alt="class-icon">
+                    <span>Різноманіття класів</span>
+                    <p>Від інтенсивних кардіо-сеансів до занять йогою та пілатесом, у нас<br> 
+                        є класи для кожного смаку та цілей.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/coach.png" %}" alt="coach-icon">
+                    <span>Професійні тренери</span>
+                    <p>Наші кваліфіковані тренери не лише мотивують, але й допомагають 
+                        вам досягти вашого найкращого результату, коригуючи техніку<br>  
+                        та надаючи особисті поради.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/workout.png" %}" alt="train-icon">
+                    <span>Іноваційні методи тренування</span>
+                    <p>Ми постійно оновлюємо наші програми, впроваджуючи нові методики тренувань, які<br> 
+                        базуються на передових<br>
+                        наукових дослідженнях<br>
+                        та найкращих практиках.<br>  
+                        Від HIIT (високоінтенсивних інтервальних тренувань) до<br> 
+                        функціонального тренування,<br>
+                        у нас є все необхідне для<br> 
+                        досягнення ваших фітнес-цілей.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/group.png" %}" alt="spilnota-icon">
+                    <span>Розвиток спільноти</span>
+                    <p>У нашій спільноті ви знайдете відмінних друзів та партнерів по тренуваннях, які будуть <br>  
+                        підтримувати вас на кожному кроці вашого фітнес-шляху.<br> 
+                        Ми організовуємо соціальні події, конкурси та інші заходи,<br>  
+                        щоб зміцнити нашу спільноту.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

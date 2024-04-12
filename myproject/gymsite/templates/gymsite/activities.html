@@ -1,0 +1,63 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body>
+        <div class="info">
+            <h1>Ласкаво запрошуємо до нашого залу з розмаїттям активностей!</h1>
+            <p>Шукаєте ідеальне місце для занять спортом та підтримки активного способу життя?<br>
+                Вітаємо у нас!<br>
+                Наш зал - це не лише місце для тренувань, але й спільнота однодумців,<br> 
+                яка завжди готова підтримати вас у досягненні ваших цілей.<br> 
+                З нами ви отримаєте не лише фізичну форму, але й позитивні емоції та нові друзі.<br> 
+                Розпочніть свій шлях до здорового та енергійного життя вже сьогодні!</p>
+            <h2>У нас ви знайдете:</h2>
+        </div>
+
+        <div class="features">
+            <div class="container">
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/boxing.png" %}" alt="boxing-icon">
+                    <span>Бокс</span>
+                    <p>Потужні тренування з боксу, що допоможуть вам підтримати форму,<br> 
+                        підвищити витривалість та вивести стрес.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/fitness.png" %}" alt="fitness-icon">
+                    <span>Фітнес</span>
+                    <p>Широкий вибір фітнес-програм для всіх рівнів фізичної підготовки.<br> 
+                        Від інтенсивних кардіо тренувань до силових вправ — ми маємо все,<br> 
+                        щоб допомогти вам досягти ваших цілей.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/aerobics.png" %}" alt="aerobics-icon">
+                    <span>Дитяча аеробіка</span>
+                    <p>Спеціально розроблені програми для дітей, які сприяють їхньому<br>
+                        здоровому розвитку та активному способу життя.<br>
+                        Наші інструктори створять атмосферу, де ваші діти будуть<br> 
+                        насолоджуватися тренуваннями.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/stretching.png" %}" alt="stretching-icon">
+                    <span>Стретчинг</span>
+                    <p>Розслабте м’язи та покращіть гнучкість за допомогою наших стретчинг-програм.<br> 
+                        Вони допоможуть вам підтримувати тіло гнучким та здоровим.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

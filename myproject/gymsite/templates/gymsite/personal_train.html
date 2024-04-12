@@ -1,0 +1,54 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body>
+        <div class="info">
+            <h1>Особисті тренування - Ваш Шлях до Фітнесу та Здоров'я</h1>
+            <p>Ласкаво просимо до нашого центру персональних тренувань,<br> 
+                де ми створюємо індивідуальні програми для досягнення<br> 
+                ваших цілей фітнесу та здоров'я. Незалежно від вашого<br>  
+                досвіду або фізичної форми, наші кваліфіковані тренери<br>  
+                допоможуть вам стати кращою версією себе.</p>
+            <h2>Чому Обрати Нас:</h2>
+        </div>
+
+        <div class="features">
+            <div class="container">
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/shield.png" %}" alt="personal-icon">
+                    <span>Персоналізований Підхід</span>
+                    <p>Кожна наша програма створюється з урахуванням ваших цілей,<br> 
+                        обмежень та індивідуальних потреб.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/coach.png" %}" alt="coach-icon">
+                    <span>Професійні тренери</span>
+                    <p>Наші кваліфіковані тренери не лише мотивують, але й допомагають 
+                        вам досягти вашого найкращого результату, коригуючи техніку<br>  
+                        та надаючи особисті поради.</p>
+                </div>
+
+                <div class="text">
+                    <img width="50px" height="auto" src="{% static "gymsite/images/guidance.png" %}" alt="guidance-icon">
+                    <span>Різноманітність Підходів</span>
+                    <p> Ми пропонуємо широкий спектр тренувань, включаючи<br> 
+                        силові тренування, кардіо, функціональну підготовку<br>
+                        та інші, щоб забезпечити вам всебічний розвиток.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

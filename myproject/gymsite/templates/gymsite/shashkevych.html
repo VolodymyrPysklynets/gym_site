@@ -1,0 +1,80 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_coach.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+    </head>
+    <body>
+        <div class="tren-info">
+            <div class="text">
+                <p>Наталія присвятила своє життя здоровому способу життя і покращенню<br>
+                    фізичної форми своїх клієнтів. Вона має вражаючі знання в області<br> 
+                    реабілітації та фізіотерапії, допомагаючи своїм клієнтам <strong>відновитися</strong><br> 
+                    після травм або оперативних втручань.</p>
+
+                <p>Крім того, Наталія володіє глибокими знаннями в галузі дієтології 
+                    та харчування, допомагаючи своїм клієнтам скласти <strong>збалансований раціон</strong>, 
+                    який підтримує їхні фізичні та психічні потреби. Вона прагне підтримувати 
+                    <strong>індивідуальний підхід</strong> до кожного клієнта, надаючи їм <strong>персоналізовані програми</strong>
+                    тренувань та рекомендації з харчування, щоб <strong>досягти їхніх цілей</strong> здоров'я і фітнесу.</p>
+            </div>
+
+            <img width = "300px" height = "400px" src="{% static "gymsite/images/trainer4.jpg" %}">
+        </div>
+
+        <div class="achive">
+            <div class="text">
+                <h1>Сертифікати</h1>
+                <ul>
+                    <li>Завершині курси тренерської підготовки</li>
+                    <li>міжнародний сертифікат REPS</li>
+                    <li>Персональний тренер</li>
+                    <li>Груповий тренінг</li>
+                    <li>Функціональний тренінг</li>
+                    <li>Реабілітація та Дієтологія</li>
+                    <li>«Функціональна анатомія. Пояс верхньої кінцівки»</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="features">
+            <h1>Займається</h1>
+            <div class="container">
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/group_t.png" %}">
+                    <span>Групові тренування</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/shield.png" %}">
+                    <span>Персональні тренування</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/fitness.png" %}">
+                    <span>Фітнес</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/stretching.png" %}">
+                    <span>Стретчинг</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/plan.png" %}">
+                    <span>Індивідуальний план</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %} 

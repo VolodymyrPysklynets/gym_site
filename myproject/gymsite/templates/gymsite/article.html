@@ -1,0 +1,34 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/articles_abonem.css' %}">
+    </head>
+    <body>
+        <div class="artcl">
+            {% for item in items %}
+                <a href="article/{{item.id}}/" class="article-link">
+                    <div class="back">
+                        <div class="content-wrapper">
+                            <div class="image">
+                                <img src="{{item.image.url}}" width="250px" height="150px">
+                            </div>
+                            <div class="text">
+                                <h2>{{item.description}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </body>
+</html>
+{% endblock %}

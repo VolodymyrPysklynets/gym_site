@@ -1,0 +1,125 @@
+/** Article **/
+
+.artcl a {
+    text-decoration: none;
+    color: white;
+}
+
+.artcl a:hover {
+    color: #ff6600; 
+}
+
+.article-link {
+    display: block;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.back {
+    background-color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 20px;
+}
+
+.image {
+    margin-right: 20px; 
+}
+
+.text {
+    flex: 1; 
+    color: black;
+}
+
+/** Article detail **/
+
+.detail h1 {
+    text-align: center;
+    padding: 15px;
+    color:#ff6600;
+}
+
+.detail img  {
+    float: left;    
+    margin: 0 15px 0 0;
+}
+
+.detail p {
+    font-size: 20;
+}
+
+/** Abonements **/
+
+.abon h1{
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.ab-head {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.name {
+    flex: 1;
+}
+
+.price {
+    margin-left: 20px;
+}
+
+.price {
+    background-color: black;
+    color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+    width: 40px;
+    height: 35px;
+}
+
+.info {
+    max-width: 100%; 
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+
+
+

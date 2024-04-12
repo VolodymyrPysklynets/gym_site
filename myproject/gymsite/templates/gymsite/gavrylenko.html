@@ -1,0 +1,68 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_coach.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+    </head>
+    <body>
+        <div class="tren-info">
+            <div class="text">
+                <p>Молода, енергійна та пристрасна тренерка, яка присвятила себе<br> 
+                    розвитку спортивної культури серед молоді.<br> 
+                    Вона має великий досвід у роботі з початківцями,<br> 
+                    допомагаючи їм <strong>зрозуміти</strong> основи<br>
+                    фізичної підготовки та <strong>вдосконалити</strong> свої навички.</p>
+
+                <p>Аліна володіє відмінними комунікативними навичками,<br> 
+                    завдяки чому легко знаходить спільну мову зі своїми учнями.<br> 
+                    Вона завжди старається знайти <strong>індивідуальний підхід</strong><br> 
+                    до кожного спортсмена, допомагаючи їм <strong>виявити та<br>
+                        розвинути</strong> їхні потенціальні здібності.</p>
+            </div>
+
+            <img width = "300px" height = "400px" src="{% static "gymsite/images/trainer1.jpg" %}">
+        </div>
+
+        <div class="achive">
+            <div class="text">
+                <h1>Сертифікати</h1>
+                <ul>
+                    <li>Завершині курси тренерської підготовки</li>
+                    <li>Основи силового тренінгу</li>
+                    <li>Інструктор тренажерного залу</li>
+                    <li>Груповий тренінг</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="features">
+            <h1>Займається</h1>
+            <div class="container">
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/group_t.png" %}" alt="group-training">
+                    <span>Групові тренування</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/fitness.png" %}" alt="fitness">
+                    <span>Фітнес</span>
+                </div>
+
+                <div class="text">
+                    <img width="100px" height="auto" src="{% static "gymsite/images/aerobics.png" %}" alt="aerobics">
+                    <span>Дитяча Аеробіка</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

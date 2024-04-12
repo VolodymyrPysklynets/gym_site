@@ -1,0 +1,180 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <title>OLIMPIAGYM</title>
+        <link rel="stylesheet" href="{% static 'gymsite/style.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body> 
+        <div id="banner">
+            <img width="100%" height="450rem" src="{% static "gymsite/images/banner.png" %}" alt="Banner">
+        </div>
+
+        <div class="box">
+            <div class="g_container">
+                <div class="gym_zal">
+                    <a href="/mainpage/aboutgym">
+                        <img src="{% static "gymsite/images/gym_zal.jpg" %}" alt="gym_zal">
+                        <span><strong>Тренарежний зал</strong></span>
+                    </a>
+                </div>
+    
+                <div class="group_workout">
+                    <a href="/mainpage/grouptrain">
+                        <img src="{% static "gymsite/images/group_train.jpg" %}" alt="group_workout">
+                        <span><strong>Групові тренування</strong></span>
+                    </a>
+                </div>
+    
+                <div class="personal_workout">
+                    <a href="/mainpage/personaltrain">
+                        <img src="{% static "gymsite/images/personal_train.jpg" %}" alt="personal_workout">
+                        <span><strong>Персональні тренування</strong></span>
+                    </a>
+                </div>
+    
+                <div class="gym_actions">
+                    <a href="/mainpage/activities">
+                        <img src="{% static "gymsite/images/activities.jpg" %}" alt="gym_actions">
+                        <span><strong>Широкий вибір активностей</strong></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="table" class="table_component">
+            <table>
+                <caption><h1>РОЗКЛАД</h1></caption>
+                <thead>
+                    <tr>
+                        <th><h3>ПН</h3></th>
+                        <th><h3>ВТ</h3></th>
+                        <th><h3>СР</h3></th>
+                        <th><h3>ЧТ</h3></th>
+                        <th><h3>ПТ</h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h3>Бокс</h3><br><h4>13:00</h4></td>
+                        <td><h3>Фітнес</h3><br><h4>12:30</h4></td>
+                        <td><h3>Дитяча Аеробіка</h3><br><h4>14:00</h4></td>
+                        <td><h3>Фітнес</h3><br><h4>13:00</h4></td>
+                        <td><h3>Бокс</h3><br><h4>14:50</h4></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Дитяча Аеробіка</h3><br><h4>15:30</h4></td>
+                        <td><h3>Стретчинг</h3><br><h4>16:00</h4></td>
+                        <td><h3>Стретчинг</h3><br><h4>16:05</h4></td>
+                        <td><h3>Бокс</h3><br><h4>16:00</h4></td>
+                        <td><h3>Дитяча Аеробіка</h3><br><h4>15:30</h4></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><h3>Фітнес</h3><br><h4>18:10</h4></td>
+                        <td></td>
+                        <td><h3>Стретчинг</h3><br><h4>17:00</h4></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+
+        <div class="discount">
+            <div class="dis_img">
+                <img src="{% static "gymsite/images/discount.jpg" %}" alt="discount">
+            </div>
+
+            <div class="dis_text">
+                <h2>Даруємо <span>знижку</span> на перший місяць занять!</h2>
+                <ul>
+                    <li>Відмічайте нас у своїх сторіс</li>
+                    <li>Очікуйте повідомлення в direct з промокодом</li>
+                    <li>Вводьте промокод на сайті під час покупки абонементу</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="coach">
+            <div class="c_text">
+                <h4>
+                    Наші висококваліфіковані тренери відзначаються глибоким<br> 
+                    розумінням індивідуальних потреб кожного клієнта,<br>
+                    надаючи персоналізовані програми тренувань для досягнення<br> 
+                    максимальних результатів. Завдяки їхньому професіоналізму<br>
+                    та підтримці, ви зможете ефективно досягти своїх<br>
+                    спортивних цілей в нашому спортзалі.
+                </h4>
+                <a href="/mainpage/trainers"><button class="button">Тренери</button></a>
+            </div>
+
+            <div class="c_img">
+                <img src="{% static "gymsite/images/coach.jpg" %}" alt="coach">
+            </div>
+        </div>
+
+        <div id="slider">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
+            <div id="slides">
+               <div id="overflow">
+                  <div class="inner">
+                     <div class="slide slide_1">
+                        <div class="slide-content">
+                            <img width="50px" height="auto" src="{% static "gymsite/images/quote.png" %}" alt="quote">
+                           <p><em>Просто залп енергії!<br> 
+                            Відмінне обладнання, зручне розташування і дружня атмосфера.<br> 
+                            Персонал завжди готовий допомогти.<br> 
+                            Я відчуваю себе справжнім чемпіоном, коли тренуюсь тут!</em></p>
+                        </div>
+                     </div>
+                     <div class="slide slide_2">
+                        <div class="slide-content">
+                            <img width="50px" height="auto" src="{% static "gymsite/images/quote.png" %}" alt="quote">
+                           <p><em>Люблю цей спортзал за його різноманітність.<br> 
+                            Тут є все, що потрібно для різних видів тренувань - від кардіо до силових вправ.<br>
+                            Кожного разу знаходжу нові можливості для покращення своєї фізичної форми!</em></p>
+                        </div>
+                     </div>
+                     <div class="slide slide_3">
+                        <div class="slide-content">
+                            <img width="50px" height="auto" src="{% static "gymsite/images/quote.png" %}" alt="quote">
+                           <p><em>Найкраще місце для зарядки енергії!<br>
+                            Дивовижна команда і чистий, затишний простір.<br>
+                            Тут завжди приємно проводити час і працювати над собою.<br> 
+                            Дякую, що створюєте таке чудове середовище для тренувань</em></p>
+                        </div>
+                     </div>
+                     <div class="slide slide_4">
+                        <div class="slide-content">
+                            <img width="50px" height="auto" src="{% static "gymsite/images/quote.png" %}" alt="quote">
+                           <p><em>Спортзал - мій другий дім!<br>
+                            Чудова атмосфера, професійні тренери і безліч можливостей для розвитку.<br> 
+                            Щоразу, приходячи сюди, відчуваю приплив енергії та мотивації<br> 
+                            досягати нових висот у спорті і житті взагалі!</em></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="controls">
+               <label for="slide1"></label>
+               <label for="slide2"></label>
+               <label for="slide3"></label>
+               <label for="slide4"></label>
+            </div>
+            <div id="bullets">
+               <label for="slide1"></label>
+               <label for="slide2"></label>
+               <label for="slide3"></label>
+               <label for="slide4"></label>
+            </div>
+         </div>
+    </body>
+</html> 
+{% endblock %}

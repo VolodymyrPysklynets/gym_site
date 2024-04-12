@@ -1,0 +1,93 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_coach.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body>
+        <div class="strelka">
+            <div class="coach">
+                <img width="200px" height="250" src="{% static "gymsite/images/trainer1.jpg" %}" alt="trainer1"> 
+                <div class="info">
+                 <div class="main-info">
+                     <h1>Гавриленко Аліна</h1>
+                     <h4>тренер 1-ї категорії</h4>
+                 </div>
+     
+                 <div class="other-info">
+                     <h2><strong>Досвід роботи:</strong> 1 рік</h2>
+                     <h2><strong>Кількість проведених занять:</strong> 75+</h2>
+                 </div>
+     
+                 <a href="/trainers/gavrylenko"><button>Дізнатися більше</button></a>
+                </div>
+             </div>
+        </div>
+
+        <div class="strelka">
+            <div class="coach">
+                <img width="200px" height="250" src="{% static "gymsite/images/trainer2.jpg" %}" alt="trainer2"> 
+                <div class="info">
+                 <div class="main-info">
+                     <h1>Мисан Богдан</h1>
+                     <h4>тренер 3-ї категорії</h4>
+                 </div>
+     
+                 <div class="other-info">
+                     <h2><strong>Досвід роботи:</strong> 4 роки</h2>
+                     <h2><strong>Кількість проведених занять:</strong> 550+</h2>
+                 </div>
+     
+                 <a href="/trainers/mysan"><button>Дізнатися більше</button></a>
+                </div>
+             </div>
+        </div>
+
+        <div class="strelka">
+            <div class="coach">
+                <img width="200px" height="250" src="{% static "gymsite/images/trainer3.jpg" %}" alt="trainer3"> 
+                <div class="info">
+                 <div class="main-info">
+                     <h1>Ренівський Валентин</h1>
+                     <h4>тренер 4-ї категорії</h4>
+                 </div>
+     
+                 <div class="other-info">
+                     <h2><strong>Досвід роботи:</strong> 6 років</h2>
+                     <h2><strong>Кількість проведених занять:</strong> 1150+</h2>
+                 </div>
+     
+                 <a href="/trainers/renivskiy"><button>Дізнатися більше</button></a>
+                </div>
+             </div>
+        </div>
+
+        <div class="strelka">
+            <div class="coach">
+                <img width="200px" height="250" src="{% static "gymsite/images/trainer4.jpg" %}" alt="trainer4"> 
+                <div class="info">
+                 <div class="main-info">
+                     <h1>Шашкевич Наталія</h1>
+                     <h4>тренер 2-ї категорії</h4>
+                 </div>
+     
+                 <div class="other-info">
+                     <h2><strong>Досвід роботи:</strong> 3 роки</h2>
+                     <h2><strong>Кількість проведених занять:</strong> 250+</h2>
+                 </div>
+     
+                 <a href="/trainers/shashkevych"><button>Дізнатися більше</button></a>
+                </div>
+             </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

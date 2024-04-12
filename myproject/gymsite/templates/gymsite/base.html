@@ -1,0 +1,50 @@
+{% load static %}
+
+        <header>
+            <nav>
+                <div>
+                    <a href="/mainpage">
+                    <img width="50px" height="auto" src="{% static 'gymsite/images/logo.png' %}" alt="logo" />
+                    <span>OLIMPIA GYM</span>
+                    </a>
+                    <a href="/mainpage/#table"><h4>Розклад</h4></a>
+                    <a href="/mainpage/article"><h4>Статті</h4></a>
+                    <a href="/mainpage/trainers"><h4>Тренери</h4></a>
+                    <a href="/mainpage/abonement"><h4>Абонементи</h4></a>
+                    <a href="#"><h4>Особистий кабінет</h4></a>
+                </div>
+            </nav>
+        </header>
+
+
+{% block content %}
+        
+{% endblock %}
+
+
+        <footer>
+            <nav>
+                <ul id="ul-logo">
+                    <li>
+                        <div class="f-image">
+                            <img width="30px" height="auto" src="{% static "gymsite/images/instagram.png" %}" alt="instagram-logo">
+                        </div>
+                        <div class="f-text">OLIMPIAGYM</div>
+                    </li>
+
+                    <li>
+                        <div class="f-image">
+                            <img width="30px" height="auto" src="{% static "gymsite/images/phone.png" %}" alt="phone-logo">
+                        </div>
+                        <div class="f-text">380-98-555-77-34</div>
+                    </li>
+
+                    <li>
+                        <div class="f-image">
+                            <img width="30px" height="auto" src="{% static "gymsite/images/map.png" %}" alt="placeholder-logo">
+                        </div>
+                        <div class="f-text">вул. Б. Хмельницького 5. Поверх 2</div>
+                    </li>
+                </ul>
+            </nav>
+        </footer>

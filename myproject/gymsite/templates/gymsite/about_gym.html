@@ -1,0 +1,144 @@
+{% extends "gymsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gymsite/style_gridblock.css' %}">
+        <link rel="stylesheet" href="{% static 'gymsite/base.css' %}">
+    </head>
+    <body>
+        <div class="info">
+            <h1>Ласкаво просимо до спортивного клубу "OLIMPIAGYM"!</h1>
+            <p>Наш зал для силових тренувань вражає своєю різноманітністю обладнання.<br> 
+                Тут ви знайдете важкий гантелі, гірки, штанги та шведські стінки для розвитку<br> 
+                силових показників. Апарати з регульованою навантаженістю дозволять вам точно<br> 
+                налаштувати тренування під ваші потреби та цілі.</p>
+        </div>
+        
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r1" checked>
+                <input type="radio" name="r" id="r2">
+                <input type="radio" name="r" id="r3">
+                <input type="radio" name="r" id="r4">
+
+                <div class="slide s1"><img src="{% static 'gymsite/images/slider-gym1.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/slider-gym2.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/slider-gym3.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/slider-gym4.jpg' %}" alt="slider-gym"></div>
+            </div>
+
+            <div class="navigation">
+                <label for="r1" class="bar"></label>
+                <label for="r2" class="bar"></label>
+                <label for="r3" class="bar"></label>
+                <label for="r4" class="bar"></label>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>У залі для кардіо тренувань вас зустрінуть передові кардіо-машини:<br>
+                бігові доріжки з амортизаційним покриттям, еліптичні тренажери,<br> 
+                велотренажери та тренажери для симуляції сходів.<br> 
+                Ці засоби дозволять вам підняти пульс та покращити кардіоваскулярну систему.</p>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r12" checked>
+                <input type="radio" name="r" id="r22">
+                <input type="radio" name="r" id="r32">
+
+                <div class="slide s1"><img src="{% static 'gymsite/images/cardio1.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/cardio2.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/cardio3.jpg' %}" alt="slider-gym"></div>
+            </div>
+
+            <div class="navigation2">
+                <label for="r12" class="bar"></label>
+                <label for="r22" class="bar"></label>
+                <label for="r32" class="bar"></label>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>Але наш клуб – це не лише про силу та кардіо.<br> 
+                Ми також пропонуємо широкий вибір інших тренувань!</p>
+            
+            <p>Наш зал для боксу – це ідеальне місце для тих, хто бажає вивчити мистецтво боксу<br> 
+                або просто попрацювати над технікою ударів. Тут ви знайдете професійні боксерські ринги,<br> 
+                важкі міші та обладнання для спарингу, а також всі необхідні пристрої для тренування<br> 
+                витривалості та координації.</p>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r13" checked>
+                <input type="radio" name="r" id="r23">
+                <input type="radio" name="r" id="r33">
+
+                <div class="slide s1"><img src="{% static 'gymsite/images/boxing1.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/boxing2.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/boxing3.jpg' %}" alt="slider-gym"></div>
+            </div>
+
+            <div class="navigation3">
+                <label for="r13" class="bar"></label>
+                <label for="r23" class="bar"></label>
+                <label for="r33" class="bar"></label>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>Зал для стретчингу – це місце, де ви зможете розслабитися та відновити гнучкість<br> 
+                свого тіла після інтенсивних тренувань. Тут ви знайдете все необхідне для<br>
+                ефективного розтягнення м'язів та покращення рухомого діапазону.</p>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r14" checked>
+                <input type="radio" name="r" id="r24">
+
+                <div class="slide s1"><img src="{% static 'gymsite/images/stret1.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/stret2.jpg' %}" alt="slider-gym"></div>
+            </div>
+
+            <div class="navigation4">
+                <label for="r14" class="bar"></label>
+                <label for="r24" class="bar"></label>
+            </div>
+        </div>
+
+        <div class="info">
+            <p>А зона для аеробіки призначена для тих, хто любить динамічні та енергійні тренування.<br> 
+                Заняття з аеробіки в "OLIMPIAGYM" – це чудовий спосіб підняти настрій та покращити<br> 
+                кардіоваскулярну систему, а також позбутися від стресу та накопиченої втоми.</p>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="r" id="r15" checked>
+                <input type="radio" name="r" id="r25">
+                <input type="radio" name="r" id="r35">
+
+                <div class="slide s1"><img src="{% static 'gymsite/images/aero1.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/aero2.jpg' %}" alt="slider-gym"></div>
+                <div class="slide"><img src="{% static 'gymsite/images/aero3.jpg' %}" alt="slider-gym"></div>
+            </div>
+
+            <div class="navigation5">
+                <label for="r15" class="bar"></label>
+                <label for="r25" class="bar"></label>
+                <label for="r35" class="bar"></label>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
