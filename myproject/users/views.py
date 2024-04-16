@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from .forms import NewUserForm
 
 def register(request):
@@ -6,6 +7,7 @@ def register(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('account')
     else:
         form = NewUserForm()
     
@@ -13,3 +15,6 @@ def register(request):
         'form':form
     }
     return render(request, 'users/register.html', context)
+
+def account(request):
+    return render(request, 'users/account.html')

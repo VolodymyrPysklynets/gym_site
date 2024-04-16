@@ -1,0 +1,49 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+#registrationForm, p{
+    text-align: center; 
+}
+
+#registrationForm div {
+    margin-bottom: 15px; 
+}
+
+.logo-container img {
+    margin-bottom: 10px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.logo-container a {
+    text-decoration: none;
+    color: white;
+}
+
+input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 300px; 
+        padding: 10px; 
+        border-radius: 10px; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box; 
+    }
+
+    
+    button[type="submit"] {
+        padding: 10px 20px; 
+        border-radius: 10px; 
+        border: none; 
+        background-color: #ff6600; 
+        color: #fff; 
+        cursor: pointer; 
+    }
+
+    button[type="submit"]:hover {
+        background-color: #bf530a; 
+    }
