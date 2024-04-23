@@ -3,11 +3,11 @@ body {
     color: white;
 }
 
-#registrationForm, p{
+#registrationForm, p, #loginForm {
     text-align: center; 
 }
 
-#registrationForm div {
+#registrationForm div, #loginForm div {
     margin-bottom: 15px; 
 }
 
@@ -47,3 +47,13 @@ input[type="text"],
     button[type="submit"]:hover {
         background-color: #bf530a; 
     }
+
+a.login {
+    color:#ff6600;
+    text-decoration: none;
+    padding: 25px;
+}
+
+a.login:hover {
+    color:#bf530a;
+}

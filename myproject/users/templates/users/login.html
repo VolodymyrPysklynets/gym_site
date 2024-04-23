@@ -8,13 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'users/style.css' %}">
     </head>
-    <body>
-        <script async defer>
-            window.onload = function() {
-                document.getElementById("registrationForm").reset();
-            };
-        </script>
-
+    <body>   
         <div class="logo-container">
             <a href="/mainpage">
                 <img width="100px" height="auto" src="{% static 'gymsite/images/logo.png' %}" alt="logo"/>
@@ -22,7 +16,7 @@
             </a>
         </div>
 
-        <form id="registrationForm" method="post">
+        <form id="loginForm" method="post">
             {% csrf_token %}
             <div>
                 {{ form.first_name }}
@@ -31,25 +25,18 @@
             <div>
                 {{ form.last_name }}
             </div>
-        
+
             <div>
-                {{ form.email }}
+                {{ form.password }}
             </div>
-        
-            <div>
-                {{ form.gender }}
-            </div>
-        
-            <div>
-                {{ form.password1 }}
-            </div>
-        
-            <div>
-                {{ form.password2 }}
-            </div>
-        
-            <button type="submit">Зареєструватися</button>
-            <a href="/users/login" class="login">Увійти</a>
+            <button type="submit">Увійти</button>
+            <a href="/users/register" class="login">Зареєструватися</a>
         </form>
+
+        <script async defer>
+            window.onload = function() {
+                document.getElementById("loginForm").reset();
+            };
+        </script>
     </body>
 </html>

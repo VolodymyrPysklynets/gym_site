@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django import forms
 
@@ -25,3 +26,19 @@ class NewUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'gender', 'password1', 'password2')
+        
+class UserLoginForm(AuthenticationForm):
+    username = forms.CharField(required=False)
+    first_name = forms.CharField(
+        max_length=30,
+        widget=forms.TextInput(attrs={"placeholder": "Ім'я"})
+    )
+    last_name = forms.CharField(
+        max_length=50,
+        widget=forms.TextInput(attrs={"placeholder": "Прізвище"})
+    )
+    password = forms.CharField(
+        label="Пароль",
+        strip=False,
+        widget=forms.PasswordInput(attrs={"placeholder": "Пароль"})
+    )
