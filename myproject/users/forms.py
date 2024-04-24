@@ -26,6 +26,13 @@ class NewUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email', 'gender', 'password1', 'password2')
+    
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.username = self.cleaned_data['first_name'] + self.cleaned_data['last_name']
+        if commit:
+            user.save()
+        return user
         
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(required=False)
