@@ -9,6 +9,23 @@
         <link rel="stylesheet" href="{% static 'users/style.css' %}">
     </head>
     <body>
-       <h1>Welcome to personal account!</h1>
+       <header>
+        <h1>Місце для даних користувача</h1>
+        <h3>Місце для даних про абонемент</h3>
+        <button type="submit" class="logout">Вийти</button>
+       </header>
+
+       <div class="main">
+        <div class="head">
+            <nav>
+                <a href="/users/account"><h4>План тренувань</h4></a>
+                <a href="#"><h4>Онлайн тренування</h4></a>
+            </nav>
+        </div>
+
+        <div class="create-p">
+            <button type="submit">Створити план</button>
+        </div>
+       </div>
     </body>
 </html>
