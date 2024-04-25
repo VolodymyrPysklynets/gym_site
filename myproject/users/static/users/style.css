@@ -3,7 +3,9 @@ body {
     color: white;
 }
 
-#registrationForm, p, #loginForm {
+/* Register and Login */
+
+#registrationForm, .logo-container p, #loginForm {
     text-align: center; 
 }
 
@@ -57,3 +59,6 @@ a.login {
 a.login:hover {
     color:#bf530a;
 }
+
+/* Account */
+
