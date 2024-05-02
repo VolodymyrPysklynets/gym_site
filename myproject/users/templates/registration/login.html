@@ -19,24 +19,15 @@
         <form id="loginForm" method="post">
             {% csrf_token %}
             <div>
-                {{ form.first_name }}
+                <input type="text" name="username" placeholder="Username" required> 
             </div>
         
             <div>
-                {{ form.last_name }}
+                <input type="password"  name="password" placeholder="Password" required> 
             </div>
-
-            <div>
-                {{ form.password }}
-            </div>
+            {{form.errors}}
             <button type="submit">Увійти</button>
-            <a href="/users/register" class="login">Зареєструватися</a>
+            <a href="{% url 'users:register' %}" class="login">Зареєструватися</a>
         </form>
-
-        <script async defer>
-            window.onload = function() {
-                document.getElementById("loginForm").reset();
-            };
-        </script>
     </body>
 </html>

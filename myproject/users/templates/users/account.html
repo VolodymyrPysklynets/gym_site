@@ -10,9 +10,12 @@
     </head>
     <body>
        <header>
-        <h1>Місце для даних користувача</h1>
+        <h1>{{user.username}}</h1>
         <h3>Місце для даних про абонемент</h3>
-        <button type="submit" class="logout">Вийти</button>
+        <form action="{% url 'logout' %}?next=/users/account" method="post">
+            {% csrf_token %}
+            <button type="submit" class="logout">Вийти</button>
+        </form>
        </header>
 
        <div class="main">

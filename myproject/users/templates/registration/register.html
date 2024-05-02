@@ -25,27 +25,23 @@
         <form id="registrationForm" method="post">
             {% csrf_token %}
             <div>
-                {{ form.first_name }}
+                <input type="text" name="username" placeholder="Username" required> 
             </div>
         
             <div>
-                {{ form.last_name }}
+                <input type="email" name="email" placeholder="Email" required>
             </div>
         
             <div>
-                {{ form.email }}
+                <input type="password" name="password1" placeholder="Password" required>
             </div>
         
             <div>
-                {{ form.password1 }}
+               <input type="password" name="password2" placeholder="Password2" required>
             </div>
-        
-            <div>
-                {{ form.password2 }}
-            </div>
-        
+            {{form.errors}}
             <button type="submit">Зареєструватися</button>
-            <a href="/users/login" class="login">Увійти</a>
+            <a href="{% url 'login' %}" class="login">Увійти</a>
         </form>
     </body>
 </html>
