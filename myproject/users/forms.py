@@ -11,13 +11,6 @@ class NewUserForm(UserCreationForm):
         widget=forms.TextInput(attrs={"placeholder": "Введіть своє прізвище"}))
     email = forms.EmailField(required=True,
         widget=forms.EmailInput(attrs={"placeholder": "Введіть електронну пошту"}))
-    TYPE_CHOICES = [
-        ('чоловік', 'Чоловік'),
-        ('жінка', 'Жінка'),
-        ('не бінарний', 'Не бінарний'),
-    ]
-    gender = forms.ChoiceField(choices=TYPE_CHOICES)
-    
     password1 = forms.CharField(required=True,
         widget=forms.PasswordInput(attrs={"placeholder": "Введіть пароль"}))
     password2 = forms.CharField(required=True,
@@ -25,7 +18,7 @@ class NewUserForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'gender', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2')
     
     def save(self, commit=True):
         user = super().save(commit=False)
