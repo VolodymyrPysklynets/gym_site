@@ -25,19 +25,19 @@
         <form id="registrationForm" method="post">
             {% csrf_token %}
             <div>
-                <input type="text" name="username" placeholder="Username" required> 
+                <input type="text" name="username" placeholder="Нікнейм" required> 
             </div>
         
             <div>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Пошта" required>
             </div>
         
             <div>
-                <input type="password" name="password1" placeholder="Password" required>
+                <input type="password" name="password1" placeholder="Пароль" required>
             </div>
         
             <div>
-               <input type="password" name="password2" placeholder="Password2" required>
+               <input type="password" name="password2" placeholder="Підтвердіть пароль" required>
             </div>
             {{form.errors}}
             <button type="submit">Зареєструватися</button>

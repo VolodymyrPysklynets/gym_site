@@ -25,6 +25,15 @@ body {
     color: white;
 }
 
+.button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.link-container {
+    text-align: center;
+}
+
 input[type="text"],
     input[type="email"],
     input[type="password"],
