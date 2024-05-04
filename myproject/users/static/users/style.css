@@ -104,7 +104,7 @@ header h3 {
     margin: 0 10px; 
 }
 
-.head a:hover {
+.head a:hover, .exercise-header nav a:hover {
     color:#ff6600;
 }
 
@@ -127,6 +127,57 @@ header h3 {
     background-color: black !important;
     margin: 100px;
 }
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Exercises page */
+
+.exercise-header nav {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 20px;
+    border-bottom: 2px solid white; 
+}
+
+.exercise-header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin: 30px;
+}
+
+.filter h3 {
+    color: #000000;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black; 
+}
+
+.filter h4 {
+    color: #000000;
+    margin: 0;
+}
+
+.filter label {
+    display: flex;
+    align-items: center;
+}
+.filter input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 
 
 

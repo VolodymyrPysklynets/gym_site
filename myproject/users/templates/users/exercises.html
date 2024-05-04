@@ -1,0 +1,38 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OLIMPIAGYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    </head>
+    <body>
+        <div class="exercise-header">
+            <nav>
+                <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
+                <a href="/users/edit_plan"><h4>Ваш план</h4></a>
+                <a href="/users/account"><h4>Особистий кабінет</h4></a>
+            </nav>
+        </div>
+
+        <div class="filter">
+            <h3>З обладнанням</h3>
+            <label><input type="checkbox" id="legs" name="equipment" value="legs"> <h4>Для ніг</h4></label>
+            <label><input type="checkbox" id="arms" name="equipment" value="arms"> <h4>Для рук</h4></label>
+            <label><input type="checkbox" id="back" name="equipment" value="back"> <h4>Для спини</h4></label>
+            <label><input type="checkbox" id="abs" name="equipment" value="abs"> <h4>Прес</h4></label>
+            <label><input type="checkbox" id="shoulders" name="equipment" value="shoulders"> <h4>Для плечей</h4></label>
+
+            <h3>Без обладнання</h3>
+            <label><input type="checkbox" id="legs2" name="no_equipment" value="legs"> <h4>Для ніг</h4></label>
+            <label><input type="checkbox" id="arms2" name="no_equipment" value="arms"> <h4>Для рук</h4></label>
+            <label><input type="checkbox" id="back2" name="no_equipment" value="back"> <h4>Для спини</h4></label>
+            <label><input type="checkbox" id="abs2" name="no_equipment" value="abs"> <h4>Прес</h4></label>
+            <label><input type="checkbox" id="shoulders2" name="no_equipment" value="shoulders"> <h4>Для плечей</h4></label>
+        </div>
+
+        <div class="exercise"></div>
+    </body>
+</html>
