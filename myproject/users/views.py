@@ -5,7 +5,7 @@ from django.views.generic.edit import FormView
 from .forms import RegisterForm
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
-
+from .models import Exercise
 
 @login_required
 def account(request):
@@ -21,7 +21,11 @@ class RegisterView(FormView):
         return super().form_valid(form)
 
 def exercises(request):
-    return render(request, 'users/exercises.html')
+    items = Exercise.objects.all()
+    context = {
+        'items':items
+    }
+    return render(request, 'users/exercises.html', context)
 
 def edit_plan(request):
     return render(request, 'users/edit_plan.html')
