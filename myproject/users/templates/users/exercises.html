@@ -7,8 +7,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'users/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        <script>
+            $(document).ready(function(){
+                $('input[type="checkbox"]').change(function(){
+                    var equipmentTypes = $('input[name="equipment_type"]:checked').map(function(){
+                        return this.value;
+                    }).get();
+                    var exerciseTypes = $('input[name="exercise_type"]:checked').map(function(){
+                        return this.value;
+                    }).get();
+                    
+                    $.ajax({
+                        url: '{% url "users:exercises" %}',
+                        type: 'GET',
+                        data: {
+                            'equipment_type': equipmentTypes,
+                            'exercise_type': exerciseTypes
+                        },
+                        success: function(response) {
+                            $('.exercise').html(response.html); 
+                        }
+                    });
+                });
+            });
+        </script>
+            
         <div class="exercise-header">
             <nav>
                 <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
@@ -19,16 +45,16 @@
         <div class="container">
             <div class="filter">
                 <h3>Тип обладнення</h3>
-                <label><input type="checkbox" id="equipment" name="equipment" value="equipment"> <h4>З обладненням</h4></label>
-                <label><input type="checkbox" id="no_equipment" name="equipment" value="no_equipment"> <h4>Без обладнення</h4></label>
+                <label><input type="checkbox" id="equipment" name="equipment_type" value="з обладженням"> <h4>З обладненням</h4></label>
+                <label><input type="checkbox" id="no_equipment" name="equipment_type" value="без обладнення"> <h4>Без обладнення</h4></label>
 
                 <h3>Тип вправи</h3>
-                <label><input type="checkbox" id="legs" name="exercise" value="legs"> <h4>Для ніг</h4></label>
-                <label><input type="checkbox" id="arms" name="exercise" value="arms"> <h4>Для рук</h4></label>
-                <label><input type="checkbox" id="back" name="exercise" value="back"> <h4>Для спини</h4></label>
-                <label><input type="checkbox" id="abs" name="exercise" value="abs"> <h4>Прес</h4></label>
-                <label><input type="checkbox" id="shoulders" name="exercise" value="shoulders"> <h4>Для плечей</h4></label>
-                <label><input type="checkbox" id="chest" name="exercise" value="chest"> <h4>Для грудей</h4></label>
+                <label><input type="checkbox" id="legs" name="exercise_type" value="ноги"> <h4>Для ніг</h4></label>
+                <label><input type="checkbox" id="arms" name="exercise_type" value="руки"> <h4>Для рук</h4></label>
+                <label><input type="checkbox" id="back" name="exercise_type" value="спина"> <h4>Для спини</h4></label>
+                <label><input type="checkbox" id="abs" name="exercise_type" value="прес"> <h4>Прес</h4></label>
+                <label><input type="checkbox" id="shoulders" name="exercise_type" value="плечі"> <h4>Для плечей</h4></label>
+                <label><input type="checkbox" id="chest" name="exercise_type" value="груди"> <h4>Для грудей</h4></label>
             </div>
 
             <div class="exercise">

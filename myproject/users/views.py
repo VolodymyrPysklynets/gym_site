@@ -6,6 +6,8 @@ from .forms import RegisterForm
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from .models import Exercise
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 @login_required
 def account(request):
@@ -21,10 +23,23 @@ class RegisterView(FormView):
         return super().form_valid(form)
 
 def exercises(request):
+    equipment_types = request.GET.getlist('equipment_type[]')
+    exercise_types = request.GET.getlist('exercise_type[]')
+    
     items = Exercise.objects.all()
-    context = {
-        'items':items
-    }
+    if equipment_types:
+        items = items.filter(type2__in=equipment_types)
+    if exercise_types:
+        items = items.filter(type__in=exercise_types)
+    
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        html = render_to_string(
+            'users/includes/exercise_list.html',
+            {'items': items}
+        )
+        return JsonResponse({'html': html})
+    
+    context = {'items': items}
     return render(request, 'users/exercises.html', context)
 
 def edit_plan(request):
