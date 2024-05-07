@@ -5,9 +5,10 @@ from django.views.generic.edit import FormView
 from .forms import RegisterForm
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
-from .models import Exercise
+from .models import Exercise, UserExercisePlan
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.views.decorators.http import require_POST
 
 @login_required
 def account(request):
@@ -42,8 +43,24 @@ def exercises(request):
     context = {'items': items}
     return render(request, 'users/exercises.html', context)
 
+@login_required
 def edit_plan(request):
-    return render(request, 'users/edit_plan.html')
+    user_plan_items = UserExercisePlan.objects.filter(user=request.user).select_related('exercise')
+    context = {'user_plan_items': user_plan_items}
+    return render(request, 'users/edit_plan.html', context)
+
+@login_required
+@require_POST  
+def add_exercise_to_plan(request):
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        exercise_id = request.POST.get('exercise_id')
+        try:
+            exercise = Exercise.objects.get(id=exercise_id)
+            plan, created = UserExercisePlan.objects.get_or_create(user=request.user, exercise=exercise)
+            return JsonResponse({'status': 'success', 'message': 'Exercise added to your plan.'})
+        except Exercise.DoesNotExist:
+            return JsonResponse({'status': 'error', 'message': 'Exercise not found'}, status=404)
+    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'users/password_reset_form.html'

@@ -25,5 +25,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="exercise">
+            {% for plan_item in user_plan_items %}
+            <div class="back">
+                <div class="content-wrapper">
+                    <div class="image">
+                        <img src="{{ plan_item.exercise.image.url }}" width="250px" height="150px">
+                    </div>
+                    <div class="text">
+                        <h2>{{ plan_item.exercise.description }}</h2>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="back">
+                <p>Ви ще не додали жодної вправи до свого плану.</p>
+            </div>
+            {% endfor %}
+        </div>
     </body>
 </html>

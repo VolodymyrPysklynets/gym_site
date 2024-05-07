@@ -34,7 +34,27 @@
                 });
             });
         </script>
-            
+
+        <script>
+            $(document).on('click', '.icon img', function() {
+                var exerciseId = $(this).data('exercise-id');
+                $.ajax({
+                    url: '{% url 'users:add_exercise_to_plan' %}',
+                    type: 'POST',
+                    data: {
+                        'exercise_id': exerciseId,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                    },
+                    error: function() {
+                        alert('Error adding exercise.');
+                    }
+                });
+            });
+        </script>  
+
         <div class="exercise-header">
             <nav>
                 <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
@@ -62,7 +82,7 @@
                 <div class="back">
                     <div class="content-wrapper">
                         <div class="icon">
-                            <img src="{{item.icon.url}}" width="50px" height="45px">
+                            <img src="{{item.icon.url}}" width="50px" height="45px" data-exercise-id="{{ item.id }}">
                         </div>
                         <div class="image">
                             <img src="{{item.image.url}}" width="250px" height="150px">
