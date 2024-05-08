@@ -221,6 +221,10 @@ button a {
     width: calc(70% - 40px);
 }
 
+.sortable .back {
+    width: calc(90% - 40px);
+}
+
 .back p {
     color: black;
 }
@@ -267,6 +271,40 @@ button a {
     align-items: center;
     width: 100%;
 }
+
+.remove-exercise {
+    background-color: black; 
+    color: white;            
+    border: none;            
+    border-radius: 5px;      
+    padding: 10px 20px;      
+    cursor: pointer;         
+}
+
+.quantity-input {
+    width: 60px; 
+    padding: 5px 10px; 
+    margin: 10px 0; 
+    border: 2px solid black; 
+    border-radius: 5px; 
+    background-color: black; 
+    color: white;
+    font-size: 16px; 
+    text-align: center; 
+    -moz-appearance: textfield; 
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
+}
+
+.quantity-input:focus {
+    outline: none; 
+    border-color: #555; 
+}
+
 
 
 

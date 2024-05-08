@@ -7,8 +7,67 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'users/style.css' %}">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
     </head>
     <body>
+        <script>
+            $(document).on('change', '.quantity-input', function() {
+                var planItemId = $(this).data('plan-item-id');
+                var quantity = $(this).val();
+                $.ajax({
+                    url: '{% url 'users:update_quantity' %}',
+                    type: 'POST',
+                    data: {
+                        'plan_item_id': planItemId,
+                        'quantity': quantity,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        alert('Quantity updated successfully.');
+                    },
+                    error: function() {
+                        alert('Error updating quantity.');
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $(".sortable").sortable({
+                    update: function(event, ui) {
+                        var order = $(this).sortable('toArray', {attribute: 'id'}).map(function(item) {
+                            return item.replace('item-', ''); // Припускаючи, що ID ваших елементів починаються з 'item-'
+                        }).toString();
+                        var csrfToken = $('#csrfToken').val();  // Використання ID для забезпечення точного вибору
+                        console.log("Order sent:", order);
+                        console.log("CSRF Token:", csrfToken);  // Додатковий лог для перевірки наявності токена
+            
+                        $.ajax({
+                            url: '{% url 'users:update_exercise_order' %}',
+                            type: 'POST',
+                            headers: {
+                                'X-CSRFToken': csrfToken
+                            },
+                            data: {
+                                'order': order
+                            },
+                            success: function(response) {
+                                console.log('Order updated');
+                            },
+                            error: function(xhr, status, error) {
+                                console.log('Error updating order:', xhr.responseText);
+                            }
+                        });
+                    }
+                });
+                $(".sortable").disableSelection();
+            });                                            
+        </script>
+            
         <div class="exercise-header">
             <nav>
                 <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
@@ -27,22 +86,51 @@
         </div>
 
         <div class="exercise">
-            {% for plan_item in user_plan_items %}
-            <div class="back">
-                <div class="content-wrapper">
-                    <div class="image">
-                        <img src="{{ plan_item.exercise.image.url }}" width="250px" height="150px">
-                    </div>
-                    <div class="text">
-                        <h2>{{ plan_item.exercise.description }}</h2>
+            <input type="hidden" id="csrfToken" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <div class="sortable">
+                {% for plan_item in user_plan_items %}
+                <div class="back" id="item-{{ plan_item.id }}" style="order:{{ plan_item.position }}">
+                    <div class="content-wrapper">
+                        <div class="icon">
+                            <img src="{% static 'users/images/menu.png' %}" width="50px" height="45px" data-exercise-id="{{ item.id }}">
+                        </div>
+                        <div class="image">
+                            <img src="{{ plan_item.exercise.image.url }}" width="250px" height="150px">
+                        </div>
+                        <div class="text">
+                            <h2>{{ plan_item.exercise.description }}</h2>
+                            <input type="number" name="quantity" value="{{ plan_item.quantity }}" min="1" data-plan-item-id="{{ plan_item.id }}" class="quantity-input">
+                        </div>
+                        <button class="remove-exercise" data-plan-item-id="{{ plan_item.id }}">Видалити</button>
                     </div>
                 </div>
+                {% empty %}
+                <div class="back">
+                    <p>Ви ще не додали жодної вправи до свого плану.</p>
+                </div>
+                {% endfor %}
             </div>
-            {% empty %}
-            <div class="back">
-                <p>Ви ще не додали жодної вправи до свого плану.</p>
-            </div>
-            {% endfor %}
         </div>
+
+        <script>
+            $(document).on('click', '.remove-exercise', function() {
+                var planItemId = $(this).data('plan-item-id');
+                $.ajax({
+                    url: '{% url 'users:remove_exercise_from_plan' %}',
+                    type: 'POST',
+                    data: {
+                        'plan_item_id': planItemId,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                        location.reload(); 
+                    },
+                    error: function() {
+                        alert('Error removing exercise.');
+                    }
+                });
+            });
+        </script>        
     </body>
 </html>

@@ -32,8 +32,10 @@ class Exercise(models.Model):
 class UserExercisePlan(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    position = models.IntegerField(default=0)
     added_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.user.username} - {self.exercise.description}'
+        return f'{self.user.username} - {self.exercise.description} - {self.quantity}'
 
