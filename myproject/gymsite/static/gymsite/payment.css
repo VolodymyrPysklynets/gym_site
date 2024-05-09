@@ -1,0 +1,13 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.success {
+    text-align: center;
+    padding: 20px;
+}
+
+.success a {
+   color: #ff6600;
+}

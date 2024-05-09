@@ -30,7 +30,10 @@
                         <div class="info">
                             <p>{{item.description |safe}}</p>
                         </div>
-                        <button>Придбати</button>
+                        <form action="{% url 'create-checkout-session' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Придбати</button>
+                        </form>
                     </div>
                     {% endfor %}  
                 </div>
@@ -54,7 +57,10 @@
                         <div class="info">
                             <p>{{item.description |safe}}</p>
                         </div>
-                        <button>Придбати</button>
+                        <form action="{% url 'create-checkout-session' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Придбати</button>
+                        </form>
                     </div>
                     {% endfor %} 
                 </div>

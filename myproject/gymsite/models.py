@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 class Articles(models.Model):
@@ -24,3 +25,14 @@ class Abonement(models.Model):
     
     def __str__(self):
         return self.name
+
+  
+class Purchase(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    abonement = models.ForeignKey(Abonement, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+    purchase_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        username = self.user.username if self.user else 'Неавторизований користувач'
+        return f'{username} - {self.abonement.name}'

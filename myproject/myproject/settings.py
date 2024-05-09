@@ -144,3 +144,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'volodymyr.r.pysklynets@ukd.edu.ua'
 EMAIL_HOST_PASSWORD = 'csubxugvqdzslznv'
+
+#Stripe
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PEazsC2cxCPmpfsWZLmTewfDWhiIsf0OldCaYex4XN5JJ4EpCLiPacGIEDL7Lqcp1JTj9kEOejb0EjZMV2quVO800tBVSUwvG'
+STRIPE_SECRET_KEY= 'sk_test_51PEazsC2cxCPmpfsyNSKXzDslxwi1qRSA9kUXckl8XmO2cPjjEPm8ljPtIMIkqJUiFZq7hXmGFjaGd6zjTf3Id9W00Oitqq2BS'

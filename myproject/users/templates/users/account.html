@@ -11,7 +11,6 @@
     <body>
        <header>
         <h1>{{user.username}}</h1>
-        <h3>Місце для даних про абонемент</h3>
         <form action="{% url 'logout' %}?next=/users/account" method="post">
             {% csrf_token %}
             <button type="submit" class="logout">Вийти</button>
