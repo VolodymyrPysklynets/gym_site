@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'users/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
        <header>
@@ -18,16 +19,56 @@
        </header>
 
        <div class="main">
-        <div class="head">
-            <nav>
-                <a href="/users/account"><h4>План тренувань</h4></a>
-                <a href="#"><h4>Онлайн тренування</h4></a>
-            </nav>
-        </div>
-
-        <div class="create-p">
-            <button type="submit"><a href="/users/exercises">Створити план</a></button>
-        </div>
+            <div class="head">
+                <nav>
+                    <a href="/users/account"><h4>План тренувань</h4></a>
+                </nav>
+            </div>
+            
+            <div class="create-p">
+                {% for plan in user_plans %}
+                    <div class="plan" data-plan-id="{{ plan.plan_id }}">
+                        <div class="plan-content">
+                            <h4>{{ plan.plan_name }}</h4>
+                        </div>
+                        <div class="plan-button">
+                            <button class="but"><a href="{% url 'users:edit_plan' %}?plan_id={{ plan.plan_id }}">Перейти до плану</a></button>
+                        </div>
+                        <div class="delete-p">
+                            <img src="{% static 'users/images/delete.png' %}" width="25px" height="20px">
+                        </div>
+                    </div>
+                {% endfor %}
+                <a href="/users/exercises" class="create-plan-btn">Створити план</a>
+            </div>
        </div>
+
+       <script>
+            $(document).ready(function() {
+                $('.delete-p img').click(function() {
+                    var planId = $(this).closest('.plan').data('plan-id');
+                    if (confirm('Are you sure you want to delete this plan?')) {
+                        $.ajax({
+                            url: '{% url 'users:delete_plan' %}',
+                            type: 'POST',
+                            data: {
+                                'plan_id': planId,
+                                'csrfmiddlewaretoken': '{{ csrf_token }}'
+                            },
+                            success: function(response) {
+                                if (response.status == 'success') {
+                                    location.reload();  
+                                } else {
+                                    alert(response.message);
+                                }
+                            },
+                            error: function() {
+                                alert('Error deleting plan.');
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

@@ -17,12 +17,14 @@
             $(document).on('change', '.quantity-input', function() {
                 var planItemId = $(this).data('plan-item-id');
                 var quantity = $(this).val();
+                var planId = $(this).data('plan-id'); 
                 $.ajax({
                     url: '{% url 'users:update_quantity' %}',
                     type: 'POST',
                     data: {
                         'plan_item_id': planItemId,
                         'quantity': quantity,
+                        'plan_id': planId, 
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function(response) {
@@ -32,7 +34,7 @@
                         alert('Error updating quantity.');
                     }
                 });
-            });
+            });            
         </script>
 
         <script>
@@ -40,11 +42,11 @@
                 $(".sortable").sortable({
                     update: function(event, ui) {
                         var order = $(this).sortable('toArray', {attribute: 'id'}).map(function(item) {
-                            return item.replace('item-', ''); // Припускаючи, що ID ваших елементів починаються з 'item-'
+                            return item.replace('item-', ''); 
                         }).toString();
-                        var csrfToken = $('#csrfToken').val();  // Використання ID для забезпечення точного вибору
+                        var csrfToken = $('#csrfToken').val();  
                         console.log("Order sent:", order);
-                        console.log("CSRF Token:", csrfToken);  // Додатковий лог для перевірки наявності токена
+                        console.log("CSRF Token:", csrfToken);  
             
                         $.ajax({
                             url: '{% url 'users:update_exercise_order' %}',
@@ -65,43 +67,44 @@
                     }
                 });
                 $(".sortable").disableSelection();
-            });                                            
+            });                                                                  
         </script>
             
         <div class="exercise-header">
             <nav>
                 <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
-                <a href="/users/edit_plan"><h4>Ваш план</h4></a>
+                <a href="/users/edit_plan_temporary"><h4>Ваш план</h4></a>
                 <a href="/users/account"><h4>Особистий кабінет</h4></a>
             </nav>
         </div>
 
-        <div class="data">
-            <div class="input-container">
-                <input type="text" name="planname" placeholder="Назва плану" required> 
-                <div class="button-container">
-                    <button type="submit">Зберегти</button>
-                </div>
-            </div>
-        </div>
-
         <div class="exercise">
+            <div class="data">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-container">
+                        <input type="text" name="planname" placeholder="Назва плану" required> 
+                        <div class="button-container">
+                            <button type="submit">Зберегти</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <input type="hidden" id="csrfToken" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
             <div class="sortable">
                 {% for plan_item in user_plan_items %}
-                <div class="back" id="item-{{ plan_item.id }}" style="order:{{ plan_item.position }}">
+                <div class="back" id="item-{{ plan_item.id }}" style="order:{{ plan_item.position|default:'0' }}">
                     <div class="content-wrapper">
                         <div class="icon">
-                            <img src="{% static 'users/images/menu.png' %}" width="50px" height="45px" data-exercise-id="{{ item.id }}">
+                            <img src="{% static 'users/images/menu.png' %}" width="50px" height="45px">
                         </div>
                         <div class="image">
                             <img src="{{ plan_item.exercise.image.url }}" width="250px" height="150px">
                         </div>
                         <div class="text">
                             <h2>{{ plan_item.exercise.description }}</h2>
-                            <input type="number" name="quantity" value="{{ plan_item.quantity }}" min="1" data-plan-item-id="{{ plan_item.id }}" class="quantity-input">
+                            <input type="number" name="quantity" value="{{ plan_item.quantity }}" min="1" data-plan-item-id="{{ plan_item.exercise_id }}" class="quantity-input">
                         </div>
-                        <button class="remove-exercise" data-plan-item-id="{{ plan_item.id }}">Видалити</button>
                     </div>
                 </div>
                 {% empty %}
@@ -109,28 +112,30 @@
                     <p>Ви ще не додали жодної вправи до свого плану.</p>
                 </div>
                 {% endfor %}
-            </div>
+            </div>           
         </div>
 
         <script>
             $(document).on('click', '.remove-exercise', function() {
                 var planItemId = $(this).data('plan-item-id');
+                var planId = $(this).data('plan-id');  
                 $.ajax({
                     url: '{% url 'users:remove_exercise_from_plan' %}',
                     type: 'POST',
                     data: {
                         'plan_item_id': planItemId,
+                        'plan_id': planId,  
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function(response) {
                         alert(response.message);
-                        location.reload(); 
+                        location.reload();
                     },
                     error: function() {
                         alert('Error removing exercise.');
                     }
                 });
             });
-        </script>        
+        </script>               
     </body>
 </html>

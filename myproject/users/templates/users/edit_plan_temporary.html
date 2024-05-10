@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLIMPIAGYM - Temporary Plan</title>
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="exercise-header">
+        <nav>
+            <a href="/users/exercises"><h4>Вибрати вправи</h4></a>
+            <a href="/users/edit_plan_temporary"><h4>Ваш план</h4></a>
+            <a href="/users/account"><h4>Особистий кабінет</h4></a>
+        </nav>
+    </div>
+    
+    <div class="exercise">
+        <div class="data">
+            <form method="POST" action="{% url 'users:save_temporary_plan' %}">
+                {% csrf_token %}
+                <div class="input-container">
+                    <input type="text" name="planname" placeholder="Назва плану" required>
+                    <div class="button-container">
+                        <button type="submit">Зберегти</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="sortable">
+            {% for plan_item in user_plan_items %}
+            <div class="back" id="temp-item-{{ forloop.counter }}">
+                <div class="content-wrapper">
+                    <div class="icon">
+                        <img src="{% static 'users/images/menu.png' %}" width="50px" height="45px">
+                    </div>
+                    <div class="image">
+                        <img src="{{ plan_item.image_url }}" width="250px" height="150px">
+                    </div>
+                    <div class="text">
+                        <h2>{{ plan_item.description }}</h2>
+                        <input type="number" name="quantity" value="{{ plan_item.quantity }}" min="1" data-plan-item-id="{{ plan_item.exercise_id }}" class="quantity-input">
+                    </div>
+                    <button class="remove-exercise" data-exercise-id="{{ plan_item.exercise_id }}">Видалити</button>
+                </div>
+            </div>
+            {% empty %}
+            <div class="back">
+                <p>Ви ще не додали жодної вправи до свого плану.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.sortable').sortable();
+            $('.sortable').disableSelection();
+
+            $('.remove-exercise').on('click', function() {
+                var exerciseId = $(this).data('exercise-id');
+                $.ajax({
+                    url: '{% url 'users:remove_temporary_exercise' %}',
+                    type: 'POST',
+                    data: {
+                        'exercise_id': exerciseId,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        location.reload();  
+                    },
+                    error: function() {
+                        alert('Error removing exercise.');
+                    }
+                });
+            });
+
+            $('.quantity-input').change(function() {
+                var exerciseId = $(this).data('plan-item-id');
+                var quantity = $(this).val();
+                $.ajax({
+                    url: '{% url 'users:update_temporary_quantity' %}',
+                    type: 'POST',
+                    data: {
+                        'exercise_id': exerciseId,
+                        'quantity': quantity,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(response) {
+                        alert('Quantity updated successfully.');
+                    },
+                    error: function() {
+                        alert('Error updating quantity.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

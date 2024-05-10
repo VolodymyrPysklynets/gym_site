@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.conf import settings
 
@@ -35,7 +36,9 @@ class UserExercisePlan(models.Model):
     quantity = models.IntegerField(default=1)
     position = models.IntegerField(default=0)
     added_on = models.DateTimeField(auto_now_add=True)
+    plan_name = models.CharField(max_length=100, null=True, blank=True)
+    plan_id = models.UUIDField(default=uuid.uuid4, editable=False)
 
     def __str__(self):
-        return f'{self.user.username} - {self.exercise.description} - {self.quantity}'
+        return f'{self.user.username} - {self.plan_name} - {self.exercise.description} - {self.quantity}'
 
