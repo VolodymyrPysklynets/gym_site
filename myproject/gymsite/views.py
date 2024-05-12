@@ -5,7 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Articles, Abonement, Purchase
-from django.contrib.auth.models import User
 
 def index(request):
     return render(request, "gymsite/mainpage.html")
@@ -67,7 +66,6 @@ def abonement(request):
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-@csrf_exempt
 @csrf_exempt
 def stripe_webhook(request):
     payload = request.body
