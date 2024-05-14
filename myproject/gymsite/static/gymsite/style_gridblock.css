@@ -1,22 +1,22 @@
 /* Info */
 
 .info {
-    margin: 15px;
-    padding: 10px;
+    margin: 0.9375rem; 
+    padding: 0.625rem; 
 }
 
 .info h1, h2 {
-    color:#ff6600;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    color: #ff6600;
+    padding-top: 0.9375rem; 
+    padding-bottom: 0.9375rem; 
 }
 
 .info p {
-    margin: 0; 
-    font-size: 20px; 
+    margin: 0;
+    font-size: 1.25rem; 
     line-height: 2; 
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.625rem; 
+    padding-bottom: 0.625rem; 
 }
 
 /* Features */
@@ -30,7 +30,7 @@
 }
 
 .features span {
-    font-size: 18px;
+    font-size: 1.125rem; 
 }
 
 .container {
@@ -42,52 +42,52 @@
 }
 
 .container > div {
-    margin: 0 20px; 
-    flex: 1 1 200px; 
-    max-width: 300px; 
+    margin: 0 1.25rem; 
+    flex: 1 1 12.5rem; 
+    max-width: 18.75rem; 
 }
 
 .container > div img,
 .container > div span {
-    display: block; 
-    margin: 0 auto; 
+    display: block;
+    margin: 0 auto;
 }
 
 .container > div p {
-    text-align: center; 
-    font-size: 18px; 
-    line-height: 2; 
-    margin-top: 2.5rem; 
+    text-align: center;
+    font-size: 1.125rem; 
+    line-height: 2;
+    margin-top: 2.5rem;
 }
 
 /* Slider */
 
 .slider {
-    width: 800px;
-    height: 400px;
+    width: 50rem; 
+    height: 25rem; 
     overflow: hidden;
-    border: 5px solid #fff;
-    margin: auto; 
-    margin-top: 50px;
+    border: 0.3125rem solid #fff; 
+    margin: auto;
+    margin-top: 3.125rem; 
 }
 
 .navigation {
     position: absolute;
-    bottom: 120px;
+    bottom: 7.5rem; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
 }
 
 .bar {
-    height: 8px;
-    width: 30px;
-    margin: 6px;
+    height: 0.5rem; 
+    width: 1.875rem; 
+    margin: 0.375rem; 
     cursor: pointer;
     background-color: #ddd;
-    opacity: .7;
-    border-radius: 10px;
-    transition: all .4s ease;
+    opacity: 0.7;
+    border-radius: 0.625rem; 
+    transition: all 0.4s ease;
 }
 
 .bar:hover {
@@ -108,7 +108,7 @@ input[name="r"] {
 
 .slide {
     width: 25%;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
 }
 
 .slide img {
@@ -146,7 +146,7 @@ input[name="r"] {
 
 .navigation2 {
     position: absolute;
-    bottom: -550px;
+    bottom: -34.375rem; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -154,7 +154,7 @@ input[name="r"] {
 
 .navigation3 {
     position: absolute;
-    bottom: -1318px;
+    bottom: -82.375rem; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -162,7 +162,7 @@ input[name="r"] {
 
 .navigation4 {
     position: absolute;
-    bottom: -1950px;
+    bottom: -121.875rem; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -170,7 +170,7 @@ input[name="r"] {
 
 .navigation5 {
     position: absolute;
-    bottom: -2585px;
+    bottom: -161.5625rem; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;

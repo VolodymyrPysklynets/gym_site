@@ -10,11 +10,11 @@ body {
 }
 
 #registrationForm div, #loginForm div {
-    margin-bottom: 15px; 
+    margin-bottom: 0.9375rem; 
 }
 
 .logo-container img {
-    margin-bottom: 10px; 
+    margin-bottom: 0.625rem; 
     display: block; 
     margin-left: auto; 
     margin-right: auto; 
@@ -27,7 +27,7 @@ body {
 
 .button-container {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem; 
 }
 
 .link-container {
@@ -35,34 +35,33 @@ body {
 }
 
 input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    select {
-        width: 300px; 
-        padding: 10px; 
-        border-radius: 10px; 
-        border: 1px solid #ccc; 
-        box-sizing: border-box; 
-    }
+input[type="email"],
+input[type="password"],
+select {
+    width: 18.75rem; 
+    padding: 0.625rem; 
+    border-radius: 0.625rem; 
+    border: 0.0625rem solid #ccc; 
+    box-sizing: border-box; 
+}
 
-    
-    button[type="submit"] {
-        padding: 10px 20px; 
-        border-radius: 10px; 
-        border: none; 
-        background-color: #ff6600; 
-        color: #fff; 
-        cursor: pointer; 
-    }
+button[type="submit"] {
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.625rem; 
+    border: none; 
+    background-color: #ff6600; 
+    color: #fff; 
+    cursor: pointer; 
+}
 
-    button[type="submit"]:hover {
-        background-color: #bf530a; 
-    }
+button[type="submit"]:hover {
+    background-color: #bf530a; 
+}
 
 a.login {
     color:#ff6600;
     text-decoration: none;
-    padding: 25px;
+    padding: 1.5625rem; 
 }
 
 a.login:hover {
@@ -73,7 +72,7 @@ a.login:hover {
 
 .center h2, .center {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem; 
 }
 
 .center a {
@@ -83,7 +82,7 @@ a.login:hover {
 
 .email {
     text-align: center;
-    margin: 25px;
+    margin: 1.5625rem; 
 }
 
 /* Account */
@@ -92,8 +91,8 @@ header {
     position: relative;
     background-color: white;
     color: black !important;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 0.9375rem; 
+    border-radius: 0.625rem; 
 }
 
 header h3 {
@@ -102,23 +101,23 @@ header h3 {
 
 .logout {
     position: absolute;
-    bottom: 10px;
-    right: 15px;
+    bottom: 0.625rem; 
+    right: 0.9375rem; 
     background-color: black !important; 
 }
 
 .main {
     background-color: white;
     color: black !important;
-    padding: 15px;
-    margin-top: 55px;
-    border-radius: 10px;
+    padding: 0.9375rem; 
+    margin-top: 3.4375rem; 
+    border-radius: 0.625rem; 
 }
 
 .head a {
     color: black;
     text-decoration: none;
-    margin: 0 10px; 
+    margin: 0 0.625rem; 
 }
 
 .head a:hover, .exercise-header nav a:hover {
@@ -131,7 +130,7 @@ header h3 {
 }
 
 .head {
-    border-bottom: 1px solid #979696; 
+    border-bottom: 0.0625rem solid #979696; 
 }
 
 .create-p {
@@ -139,18 +138,18 @@ header h3 {
     flex-direction: column; 
     align-items: center; 
     width: 100%; 
-    margin-top: 20px;
+    margin-top: 1.25rem; 
 }
 
 .create-plan-btn {
     background-color: black; 
     color: white; 
-    padding: 10px 20px; 
-    border-radius: 10px; 
+    padding: 0.625rem 1.25rem; 
+    border-radius: 0.625rem; 
     border: none;
     align-self: center; 
     width: auto; 
-    margin-top: 20px; 
+    margin-top: 1.25rem; 
     text-decoration: none; 
 }
 
@@ -164,14 +163,14 @@ button a {
 .exercise-header nav {
     display: flex; 
     justify-content: center; 
-    margin-top: 20px;
-    border-bottom: 2px solid white; 
+    margin-top: 1.25rem; 
+    border-bottom: 0.125rem solid white; 
 }
 
 .exercise-header nav a {
     color: white;
     text-decoration: none;
-    margin: 0 30px;
+    margin: 0 1.875rem; 
 }
 
 .container {
@@ -179,20 +178,20 @@ button a {
 }
 
 .filter {
-    flex: 0 0 200px;
-    height: 400px; 
+    flex: 0 0 12.5rem; 
+    height: 25rem; 
     overflow-y: auto;
     background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin: 30px;
+    border-radius: 0.625rem; 
+    padding: 1.25rem; 
+    margin-bottom: 1.25rem; 
+    margin: 1.875rem; 
 }
 
 .filter h3 {
     color: #000000;
-    margin-bottom: 15px;
-    border-bottom: 1px solid black; 
+    margin-bottom: 0.9375rem; 
+    border-bottom: 0.0625rem solid black; 
 }
 
 .filter h4 {
@@ -204,15 +203,16 @@ button a {
     display: flex;
     align-items: center;
 }
+
 .filter input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 0.625rem; 
 }
 
 .exercise {
     flex: 1; 
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 0.625rem; 
 }
 
 .content-wrapper {
@@ -222,16 +222,16 @@ button a {
 
 .back {
     background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    margin: 20px;
-    width: calc(70% - 40px);
+    border-radius: 0.625rem; 
+    padding: 1.25rem; 
+    margin-bottom: 1.25rem; 
+    margin-right: 1.25rem; 
+    margin: 1.25rem; 
+    width: calc(100% - 2.5rem); 
 }
 
 .sortable .back {
-    width: calc(90% - 40px);
+    width: calc(90% - 2.5rem); 
 }
 
 .back p {
@@ -239,7 +239,7 @@ button a {
 }
 
 .image {
-    margin-right: 20px; 
+    margin-right: 1.25rem; 
 }
 
 .text {
@@ -251,26 +251,26 @@ button a {
 
 .data .button-container {
     text-align: left !important;
-    padding: 10px;
+    padding: 0.625rem; 
 }
 
 .data input[type="text"] {
-    border: 1px solid #000000; 
-    margin: 10px; 
-    padding: 8px; 
-    width: calc(100% - 42px); 
+    border: 0.0625rem solid #000000; 
+    margin: 0.625rem; 
+    padding: 0.5rem; 
+    width: calc(100% - 2.625rem); 
 }
 
 .data div {
-    margin: 10px;
-    padding: 15px;
+    margin: 0.625rem; 
+    padding: 0.9375rem; 
 }
 
 .data {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 0.625rem; 
     width: 50%;
-    margin: 20px auto 20px 30px;
+    margin: 1.25rem auto 1.25rem 1.875rem; 
     display: flex;
     justify-content: flex-start;
 }
@@ -285,20 +285,20 @@ button a {
     background-color: black; 
     color: white;            
     border: none;            
-    border-radius: 5px;      
-    padding: 10px 20px;      
+    border-radius: 0.3125rem; 
+    padding: 0.625rem 1.25rem; 
     cursor: pointer;         
 }
 
 .quantity-input {
-    width: 60px; 
-    padding: 5px 10px; 
-    margin: 10px 0; 
-    border: 2px solid black; 
-    border-radius: 5px; 
+    width: 3.75rem; 
+    padding: 0.3125rem 0.625rem; 
+    margin: 0.625rem 0; 
+    border: 0.125rem solid black;
+    border-radius: 0.3125rem; 
     background-color: black; 
     color: white;
-    font-size: 16px; 
+    font-size: 1rem; 
     text-align: center; 
     -moz-appearance: textfield; 
 }
@@ -319,17 +319,17 @@ button a {
 .plan {
     background-color: #52575D; 
     color: white; 
-    border-radius: 10px; 
-    padding: 10px;
+    border-radius: 0.625rem; 
+    padding: 0.625rem; 
     width: 40%; 
     align-self: flex-start;
-    margin: 15px;
+    margin: 0.9375rem; 
     position: relative; 
 }
 
 .plan-content {
     width: 100%; 
-    margin-bottom: 10px; 
+    margin-bottom: 0.625rem; 
 }
 
 .plan-button {
@@ -341,9 +341,9 @@ button a {
 .plan .but {
     background-color: white;
     color: black;
-    border-radius: 10px;
+    border-radius: 0.625rem; 
     border: none;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; 
 }
 
 .plan .but a {
@@ -353,8 +353,8 @@ button a {
 
 .delete-p {
     position: absolute; 
-    top: 10px; 
-    right: 10px; 
+    top: 0.625rem; 
+    right: 0.625rem; 
     z-index: 2; 
 }
 
@@ -362,9 +362,3 @@ button a {
     cursor: pointer;
     display: block;
 }
-
-
-
-
-
-
