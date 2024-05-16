@@ -1,12 +1,17 @@
 {% load static %}
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <header>
             <nav>
-                <div>
-                    <a href="/mainpage">
-                    <img width="50px" height="auto" src="{% static 'gymsite/images/logo.png' %}" alt="logo" />
-                    <span>OLIMPIA GYM</span>
+                <div class="logo-container">
+                    <a href="/mainpage" class="logo-link">
+                        <img width="50px" height="auto" src="{% static 'gymsite/images/logo.png' %}" alt="logo" />
+                        <span>OLIMPIA GYM</span>
                     </a>
+                    <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+                </div>
+                <div class="menu" id="menu">
                     <a href="/mainpage/#table"><h4>Розклад</h4></a>
                     <a href="/mainpage/article"><h4>Статті</h4></a>
                     <a href="/mainpage/trainers"><h4>Тренери</h4></a>
@@ -16,6 +21,12 @@
             </nav>
         </header>
 
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('show');
+            }
+        </script>
 
 {% block content %}
         

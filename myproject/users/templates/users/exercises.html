@@ -46,7 +46,7 @@
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function(response) {
-                        alert(response.message);
+                        {% comment %} alert(response.message); {% endcomment %}
                     },
                     error: function() {
                         alert('Error adding exercise.');

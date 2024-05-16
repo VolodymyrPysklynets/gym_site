@@ -70,6 +70,23 @@
   object-fit: cover;
 }
 
+@media only screen and (max-width: 768px) {
+  .strelka {
+      margin: 1rem; 
+  }
+  .coach {
+      flex-direction: column; 
+      align-items: flex-start; 
+  }
+  .info {
+      margin-left: 0; 
+      margin-top: 0.5rem; 
+  }
+  .strelka:before {
+      border-left: 0; 
+  }
+}
+
 /* Coach info */
 
 .text {
@@ -138,4 +155,32 @@
 .container > div img,
 .container > div span {
   margin: 1.5625rem auto !important; 
+}
+
+@media only screen and (max-width: 768px) {
+  .tren-info {
+    flex-direction: column-reverse;
+  }
+
+  .achive,
+  .features {
+    padding: 1.875rem;
+  }
+
+  .container > div {
+    text-align: center;
+    margin-bottom: 1.875rem;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .coach {
+    padding: 1rem;
+  }
+
+  .strelka:before {
+    display: none;
+  }
 }

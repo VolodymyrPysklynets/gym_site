@@ -23,7 +23,7 @@
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 0.5fr 0,5fr; 
-    gap: 10px 3px; 
+    gap: 0.3125rem 0.09375rem; 
     grid-template-areas: 
       "gym_zal group_workout personal_workout"
       "gym_actions gym_actions gym_actions"; 
@@ -31,8 +31,11 @@
 
   .g_container span {
     color: black;
-    padding: 10px;
-    font-size: 18px;
+    padding: 0.625rem; 
+    font-size: 1.125rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
   }
 
   .g_container a {
@@ -44,7 +47,7 @@
 .personal_workout { grid-area: personal_workout; }
 .gym_actions { 
     grid-area: gym_actions;
-    height: 18em;
+    height: 18rem;
  }
 
 .gym_zal img,
@@ -60,6 +63,23 @@
     filter: grayscale(100%) sepia(100%) brightness(80%) saturate(100%) hue-rotate(0deg);
 }
 
+@media (max-width: 768px) {
+    .g_container {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
+        grid-template-areas: 
+          "gym_zal"
+          "group_workout"
+          "personal_workout"
+          "gym_actions"; 
+    }
+    .g_container span {
+        text-align: center; 
+        display: block; 
+        margin-top: 0.5rem; 
+    }
+}
+
 /* Shedule Table */
 
 .table_component {
@@ -68,12 +88,12 @@
 }
 
 .table_component table {
-    border: 1.5px solid #62626a;
+    border: 0.09375rem solid #62626a;
     height: 100%;
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border-spacing: 1px;
+    border-spacing: 0.03125rem;
     text-align: center;
 }
 
@@ -84,21 +104,31 @@
 }
 
 .table_component th {
-    border: 1.5px solid #62626a;
+    border: 0.09375rem solid #62626a;
     background-color: #000000;
     color: #ffffff;
-    padding: 5px;
+    padding: 0.15625rem;
 }
 
 .table_component td {
-    border: 1.5px solid #62626a;
+    border: 0.09375rem solid #62626a;
     background-color: #383333;
     color: #ffffff;
-    padding: 5px;
+    padding: 0.15625rem;
 }
 
 .table_component td h4 {
     color: #ff6600;
+}
+
+@media only screen and (max-width: 768px) {
+    .table_component td, .table_component th {
+        padding: 0.5rem;
+        font-size: 0.71rem; 
+    }
+    .table_component table {
+        max-height: 40%;
+    }
 }
 
 /* Discount and coach banner */
@@ -160,9 +190,9 @@
 .coach button {
     background-color: black;
     color: white;
-    border: 2px solid white;
-    padding: 10px 20px;
-    font-size: 16px;
+    border: 0.125rem solid white;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -174,6 +204,20 @@
   .coach .button:active {
     background-color: #ff6600;
   }
+
+  @media only screen and (max-width: 768px) {
+    .dis_text, .c_text {
+        text-align: center;
+    }
+
+    .dis_text, .dis_text ul {
+        padding-left: 0; 
+    }
+
+    .dis_img, .c_img {
+        display: none;
+    }
+}
 
 /* Review */
 
@@ -194,8 +238,8 @@
  }
 
  #slides {
-    padding: 10px;
-    border: 3px solid #ccc;
+    padding: 0.625rem;
+    border: 0.1875rem solid #ccc;
     background: #fff;
     position: relative;
     z-index: 1;
@@ -203,12 +247,12 @@
 
  #slides .slide-content {
     text-align: center; 
-    padding: 20px; 
+    padding: 1.25rem;
 }
 
 .slide-content p {
     margin: 0; 
-    font-size: 20px; 
+    font-size: 1.25rem;
     line-height: 1.5; 
 }
 
@@ -237,7 +281,7 @@
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
     width: 400%;
     line-height: 0;
-    height: 300px;
+    height: 18.75rem;
  }
 
  #slides .slide {
@@ -251,9 +295,9 @@
  }
 
  #controls {
-    margin: -180px 0 0 0;
+    margin: -11.25rem 0 0 0;
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     z-index: 3;
     position: relative;
  }
@@ -261,8 +305,8 @@
  #controls label {
     transition: opacity 0.2s ease-out;
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     opacity: .4;
     position: absolute; 
     top: 50%;
@@ -274,17 +318,17 @@
  }
  
  #bullets {
-    margin: 150px 0 0;
+    margin: 9.375rem 0 0;
     text-align: center;
  }
 
  #bullets label {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 0.625rem;
+    height: 0.625rem;
     border-radius:100%;
     background: #ccc;
-    margin: 0 10px;
+    margin: 0 0.625rem;
  }
 
 #slide1:checked ~ #controls label:nth-child(2),

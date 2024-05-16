@@ -158,6 +158,18 @@ button a {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 768px) {
+    .create-p {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .plan {
+        width: 80%; 
+        margin-bottom: 1rem; 
+        text-align: center; 
+    }
+}
+
 /* Exercises page */
 
 .exercise-header nav {
@@ -247,6 +259,54 @@ button a {
     color: black;
 }
 
+@media screen and (max-width: 768px) {
+    .exercise-header nav {
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 1rem; 
+        border-bottom: none;
+        font-size: 0.9rem; 
+    }
+
+    .exercise-header nav a {
+        margin: 0; 
+        padding: 0.5rem; 
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .filter {
+        flex: 0 0 auto;
+        width: calc(100% - 3.75rem);
+        margin: 0.9375rem 0;
+        height: 17.5rem; 
+    }
+
+    .image {
+        margin-right: 0;
+        margin-bottom: 0.625rem; 
+    }
+
+    .image img {
+        width: 100%; 
+        height: auto; 
+        max-width: 10.5rem; 
+        max-height: 4.5rem; 
+    }
+
+    .icon img {
+        width: 2.5rem;  
+        height: 2.25rem; 
+    }
+
+    .text h2 {
+        font-size: 1rem; 
+    }
+}
+
 /* Edit plan page */
 
 .data .button-container {
@@ -297,7 +357,7 @@ button a {
     border: 0.125rem solid black;
     border-radius: 0.3125rem; 
     background-color: black; 
-    color: white;
+    color: white !important;
     font-size: 1rem; 
     text-align: center; 
     -moz-appearance: textfield; 
@@ -312,6 +372,39 @@ button a {
 .quantity-input:focus {
     outline: none; 
     border-color: #555; 
+}
+
+@media (max-width: 768px) {
+    .data {
+        width: 100%;
+        margin: 1.25rem auto; 
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .data input[type="text"] {
+        width: calc(60% - 1.25rem); 
+    }
+
+    .remove-exercise {
+        background-color: black; 
+        color: white;            
+        border: none;            
+        border-radius: 0.3125rem; 
+        padding: 0.3125rem 0.625rem; 
+        cursor: pointer;
+        font-size: 0.75rem; 
+    }
+
+    .quantity-input {
+        width: 1.5rem; 
+        height: 1.15rem; 
+        padding: 0.02rem 0.6rem; 
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 0.8rem; 
+        /* color: white; */
+    }
 }
 
 /* Plan List */
@@ -361,4 +454,13 @@ button a {
 .delete-p img {
     cursor: pointer;
     display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .plan {
+        width: auto; 
+        align-self: auto; 
+        margin: 0 auto; 
+        margin-bottom: 1rem;
+    }
 }
