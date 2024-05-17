@@ -195,3 +195,24 @@ input[name="r"] {
     transform: translateX(-50%);
     display: flex;
 }
+
+@media screen and (max-width: 768px) {
+    .slider {
+        display: none;
+    }
+    .single-image {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .single-image img {
+        width: 100%;
+        max-height: 25.625rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .single-image {
+        display: none;
+    }
+}
