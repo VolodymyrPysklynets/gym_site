@@ -1,5 +1,28 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'gymsite/payment.css' %}">
+<style>
+    .cancel {
+        text-align: center;
+        margin-top: 20%;
+        font-size: 1.4rem;
+    }
+
+    .cancel a {
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .cancel a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .cancel {
+            margin-top: 40%;
+        }
+    }
+</style>
 <div class="cancel">
     <h1>Платіж скасовано</h1>
     <p>Ви скасували процес оплати. Якщо у вас виникли проблеми з платежем, будь ласка, спробуйте ще раз або зверніться за допомогою.</p>

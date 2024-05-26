@@ -3,10 +3,12 @@ from django.urls import path, include
 from gymsite.views import articleId
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import HttpResponseRedirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainpage/', include('gymsite.urls')),
+    path('', lambda request: HttpResponseRedirect('/mainpage/')),
     path('trainers/', include('gymsite.urls')),
     path('mainpage/article/<int:id>/', articleId),
     path('users/', include('users.urls')),

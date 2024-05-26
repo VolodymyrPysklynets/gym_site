@@ -14,7 +14,7 @@ urlpatterns = [
     path('renivskiy', renivskiy),
     path('shashkevych', shashkevych),
     path('article', article),
-    path('abonement', abonement),
+    path('abonement', abonement, name='abonement'),
     path('create-checkout-session/<int:abonement_id>/', create_checkout_session, name='create-checkout-session'),
     path('success/', success, name='success'),
     path('cancel/', cancel, name='cancel'),

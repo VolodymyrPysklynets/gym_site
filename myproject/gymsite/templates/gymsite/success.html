@@ -1,5 +1,29 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'gymsite/payment.css' %}">
+<style>
+    .success {
+        text-align: center;
+        margin-top: 20%;
+        font-size: 1.4rem;
+    }
+
+    .success a {
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .success a:hover {
+        text-decoration: underline;
+    }
+
+    
+    @media (max-width: 768px) {
+        .success {
+            margin-top: 40%;
+        }
+    }
+</style>
 <div class="success">
     <h1>Дякуємо за вашу покупку!</h1>
     <p>Оплата пройшла успішно. Ваш абонемент активовано.</p>
