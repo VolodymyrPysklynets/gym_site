@@ -117,7 +117,7 @@
         </div>
 
         <script>
-            $(document).on('click', '.remove-exercise', function() {
+            $(document).on('click touchstart', '.remove-exercise', function() {
                 var planItemId = $(this).data('plan-item-id');
                 var planId = $(this).data('plan-id');  
                 $.ajax({

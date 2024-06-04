@@ -61,7 +61,7 @@
             $('.sortable').sortable();
             $('.sortable').disableSelection();
 
-            $('.remove-exercise').on('click', function() {
+            $('.remove-exercise').on('click touchstart', function() {
                 var exerciseId = $(this).data('exercise-id');
                 $.ajax({
                     url: '{% url 'users:remove_temporary_exercise' %}',
@@ -79,7 +79,7 @@
                 });
             });
 
-            $('.quantity-input').change(function() {
+            $('.quantity-input').on('input', function() {
                 var exerciseId = $(this).data('plan-item-id');
                 var quantity = $(this).val();
                 $.ajax({
@@ -91,7 +91,7 @@
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function(response) {
-                        {% comment %} alert('Quantity updated successfully.'); {% endcomment %}
+                        // alert('Quantity updated successfully.');
                     },
                     error: function() {
                         alert('Error updating quantity.');
