@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-gqze-%+=8iqlr7xdnsf4%ggz^^!4@vk)_7k3k#x9nd4%9q8etw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vital-loved-amoeba.ngrok-free.app']
 
-# CSRF_TRUSTED_ORIGINS = [
-#     'https://fe27-46-211-155-50.ngrok-free.app',
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://vital-loved-amoeba.ngrok-free.app',
+]
 
 # Application definition
 
